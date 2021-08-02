@@ -4,12 +4,34 @@ let nome = "Samanta";
 const idade = 32;
 let curso = "Node e Angular";
 
-// Funções
+// Tipos
 
-function calcularSoma(x, y) {
+var n = 10;
+var string = "uma linha escrita";
+var arrayVazio = [];
+var arrayNum = [1, 2, 3];
+
+exports.alunos = [
+  {
+    nome: "joao",
+    idade: "20",
+  },
+  {
+    nome: "samanta",
+    idade: "32",
+  },
+  {
+    nome: "jose",
+    idade: "40",
+  },
+];
+
+// Funções + Módulos
+
+exports.somar = function (x, y) {
   return x + y;
-}
+};
 
-// Módulos
-
-exports.somar = calcularSoma;
+exports.multiplicar = function (x, y) {
+  return x * y;
+};

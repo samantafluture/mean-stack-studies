@@ -17,3 +17,8 @@ console.log(listaAlunos[1]); // ler item 2
 console.log(listaAlunos[1].idade); // ler idade do item 2
 console.log(listaAlunos[1].nome); // ler nome do item 2
 
+// ForEach - Acessando cada objeto
+listaAlunos.forEach(aluno => {
+    console.log("nome: " + aluno.nome);
+    console.log("nome: " + aluno.idade);
+});

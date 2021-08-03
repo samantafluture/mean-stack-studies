@@ -35,6 +35,10 @@ https://github.com/marianalino/impacta-turma-30
 2. usando variável para referenciar: `var funcao = funcao;`
 3. funcao anônima: `var calculo = function(x,y) (return x+y)`
 
+---
+
+# Aula 02
+
 ## Callback
 
 - Retorno de uma função
@@ -45,6 +49,9 @@ function funcao (callback) {
     callback();
 }
 ```
+
+## Servidor em Node.js
+
 
 
 

@@ -35,3 +35,15 @@ exports.somar = function (x, y) {
 exports.multiplicar = function (x, y) {
   return x * y;
 };
+
+exports.verificarTamanho = function (x) {
+  return x.length;
+};
+
+exports.executar = function (operacao) {
+  return operacao("impacta");
+};
+
+// Arrow function
+
+exports.divisao = (x, y) => y / x;

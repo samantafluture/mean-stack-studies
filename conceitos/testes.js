@@ -4,16 +4,18 @@ var funcoes = require("./funcoes");
 // Executar
 var soma = funcoes.somar(10, 5);
 var multiplicacao = funcoes.multiplicar(10, 5);
+var divisao = funcoes.divisao(100, 5);
 var listaAlunos = funcoes.alunos;
 
 // Imprimir
 console.log("Minha soma deu: " + soma);
 console.log("Minha multiplicação deu: " + multiplicacao);
-console.log("Minha lista de objetos: " + listaAlunos.length);
+console.log("Minha divisão deu: " + divisao);
 
 console.log("============================");
 
 // Lendo a lista (array) de objetos
+console.log("Minha lista de objetos: " + listaAlunos.length);
 console.log("Lista: ", listaAlunos);
 console.log("Segundo da lista: ", listaAlunos[1]);
 console.log("Idade: ", listaAlunos[1].idade);

@@ -1,3 +1,11 @@
-# Anotações sobre MEAN Stack (MongoDB, Express, Angular, Node.js)
+# Estudos MEAN StacK
 
-Estudos baseados no curso ao vivo da Impacta, turma #30, dos dias 30 de julho de 2021 a 11 de agosto de 2021.
+Estudos sobre **MEAN Stack** baseados no curso ao vivo da [Impacta](https://impacta.com.br), com objetivo de aprofundar conhecimento e criar projetos relacionados. 
+
+## Tecnologias
+- MongoDB
+- Express
+- Angular
+- Node.js
+
+Repositório em construção com :coffe: e :heart:.

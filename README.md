@@ -8,4 +8,4 @@ Estudos sobre **MEAN Stack** baseados no curso ao vivo da [Impacta](https://impa
 - Angular
 - Node.js
 
-Repositório em construção com :coffee:  e :heart:.
+Repositório em construção com :coffee: &nbsp;e :heart:.

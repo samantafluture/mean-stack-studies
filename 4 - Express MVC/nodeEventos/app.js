@@ -26,6 +26,11 @@ app.set("view engine", "ejs");
 // config de caminho de pasta raiz para recursos estáticos
 app.use(express.static(__dirname + "/public"));
 
+app.use(cookieParser("nodeEventos"));
+app.use(expressSession());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
 /* Carregar o app */
 
 // ordem de carregamento para carregar o app

@@ -3,7 +3,6 @@
 ## Plugins
 - EditorConfig
     - file > preferences > settings
-- Blank Line Organizer
 - Color Highlight
 - Color Picker
 - GitLens
@@ -108,5 +107,54 @@ server.listen(port, function () {
 
 3. Na função readFile(), passar como parâmetro no lugar do "index.html" uma constante do nome. No caso, `__dirname` retorna aonde está sendo executado: `fs.readFile(__dirname + caminho, function (erro, conteudo)`
 
+---
 
+# Aula 03
 
+## npm
+
+- node package manager
+- exemplos: [Owl Carousel](https://www.npmjs.com/package/owl.carousel), [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/setup/using-package-managers)
+- npm: método de instalação para dependência
+- o arquivo package.json tem em sua estrutura uma propriedade chamada `dependencies`
+- `dependencies`: ficam declarados os módulos de terceiros utilizados
+
+## Comandos Básicos
+
+`$ node`: usamos para executar arquivos .js para rodar scripts gerados
+
+`$ npm`: usamos para lidar com projetos node
+
+`$ npm update`: atualização dos módulos disponíveis no projeto
+
+## Versionamento Semântico
+
+Ler mais sobre [aqui](https://semver.org/lang/pt-BR/).
+
+A ideia é ter um controle sobre as versões, para que se saiba o que está acontecendo em cada versão. Cada número significa uma coisa. 
+
+## Iniciar um projeto Node
+
+1. Crie uma pasta para o projeto
+
+2. Vá até ela no terminal: `cd pasta-proejto/`
+
+3. Inicie o node: `npm init`
+
+* este comando inicializa um projeto node
+* criará um package.json com configurações
+
+4. Preencha as informações do projeto de acordo com o que o npm irá apresentar, tal como nome do projeto, instalação de dependências, etc
+
+* ao dar `enter` você concorda com as sugestões 
+
+## Instalar módulos e dependências de desenvolvimento
+
+- Instalar lib no projeto: `npm instal <nome-do-modulo> --save`
+- Instalar lib apenas para desenvolvimento: `npm instal <nome-do-modulo> --save-dev`
+- Instalar de forma global: `npm instal <nome-do-modulo> --g`
+
+## Outros arquivos de config
+
+.gitigonore
+- Incluir aqui, por exemplo, a pasta `node_modules/`

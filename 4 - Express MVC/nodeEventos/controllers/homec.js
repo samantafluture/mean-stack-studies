@@ -3,6 +3,8 @@ module.exports = function (app) {
     index: function (request, response) {
       response.render("home/inicio");
     },
+    login: function (request, response) {},
+    logout: function (request, response) {},
   };
   return HomeController;
 };

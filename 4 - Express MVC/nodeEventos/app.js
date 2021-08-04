@@ -7,7 +7,7 @@ var load = require("express-load");
 
 // app -> objeto que será nossa instância do express importado acima
 // essa variável executará o que significa o próprio módulo
-app = express;
+app = express();
 
 // o primeiro valor de "views" setado acima é uma constante do express
 // significa que ao configurarmos, falamos para a app que nossas views não podem

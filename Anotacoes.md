@@ -163,5 +163,5 @@ A ideia é ter um controle sobre as versões, para que se saiba o que está acon
 
 Comando para gerar projeto Node.js com boilerplate para formato MVC, usando como View o .ejs: `express node nodeEventos --view=ejs`.
 
-
+- Rodar com `nodemon app`
 

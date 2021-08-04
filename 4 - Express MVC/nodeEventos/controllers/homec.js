@@ -14,7 +14,7 @@ module.exports = function (app) {
         // vamos armazenar as infos para a sessão
         var user = request.body.usuario;
         // criar a sessão
-        response.session.usuarioSession = user;
+        request.session.usuarioSession = user;
         response.redirect("eventos");
       } else {
         // vamos redirecionar para a tela inicial

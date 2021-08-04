@@ -165,3 +165,41 @@ Comando para gerar projeto Node.js com boilerplate para formato MVC, usando como
 
 - Rodar com `nodemon app`
 
+---
+
+# Aula 04
+
+## Fluxo da aplicação "Formulário de login"
+
+1. Ler arquivo de rotas: `routes/home.js`
+2. Interpreta e se prepara para ler e realizar as ações baseadas nas actions dos controllers
+3. Ao colocar a rota "/" (vazia), ele entende a declaração abaixo:
+
+```javascript
+var home = app.controller.home;
+app.get("/", homec.index);
+```
+
+4. Vai buscar onde temos controllers (definidos no `app.js` que setamos a pasta controllers para onde temos os arquivos)
+5. O `homec` é o nome do arquivo .js (ele interpreta sem precisar da extensão)
+6. Ao entrar no controller `homec.js`, vemos o export do módulo com a declaração do `HomeController` abaixo:
+
+```javascript
+module.exports = function(app){
+  var HomeController = {};
+  return HomeController;
+}
+```
+
+7. Dentro da variável do HomeController, declaramos nossas actions que serão as ações a serem tomadas pela aplicação quando rotas forem acionadas
+8. A rota "/" está definida para ler a action `homec.index` que está abaixo:
+
+```javascript
+index: function(request, response){
+  response.render("home/inicio");
+}
+```
+
+9. A action de index por reagit a uma rota acionada, tem por definição a request e a response, aonde é possível compreender entradas e saídas para a tela
+10. Como response é definido o comando de render que por sua vez chamará uma view para ser literalmente renderizada na tela
+11. A tela de inicio tem um formulario com o método POST e com a action de '/login', o arquivo de rotas já tem pré-definido para entender o que deve fazer se receber essa rota: `app.post('/login', homec.login);`

@@ -158,3 +158,10 @@ A ideia é ter um controle sobre as versões, para que se saiba o que está acon
 
 .gitigonore
 - Incluir aqui, por exemplo, a pasta `node_modules/`
+
+## Criar projeto express
+
+Comando para gerar projeto Node.js com boilerplate para formato MVC, usando como View o .ejs: `express node nodeEventos --view=ejs`.
+
+
+

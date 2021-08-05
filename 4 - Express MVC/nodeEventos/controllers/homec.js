@@ -21,7 +21,11 @@ module.exports = function (app) {
         response.redirect("/");
       }
     },
-    logout: function (request, response) {},
+    logout: function (request, response) {
+      // destruindo a sessão
+      request.session.destroy();
+      response.redirect("/");
+    },
   };
   return HomeController;
 };

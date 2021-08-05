@@ -171,18 +171,22 @@ Comando para gerar projeto Node.js com boilerplate para formato MVC, usando como
 
 ## Fluxo da aplicação "Formulário de login"
 
-1. Ler arquivo de rotas: `routes/home.js`
-2. Interpreta e se prepara para ler e realizar as ações baseadas nas actions dos controllers
-3. Ao colocar a rota "/" (vazia), ele entende a declaração abaixo:
+- Ler arquivo de rotas: `routes/home.js`
+
+- Interpreta e se prepara para ler e realizar as ações baseadas nas actions dos controllers
+
+- Ao colocar a rota "/" (vazia), ele entende a declaração abaixo:
 
 ```javascript
 var home = app.controller.home;
 app.get("/", homec.index);
 ```
 
-4. Vai buscar onde temos controllers (definidos no `app.js` que setamos a pasta controllers para onde temos os arquivos)
-5. O `homec` é o nome do arquivo .js (ele interpreta sem precisar da extensão)
-6. Ao entrar no controller `homec.js`, vemos o export do módulo com a declaração do `HomeController` abaixo:
+- Vai buscar onde temos controllers (definidos no `app.js` que setamos a pasta controllers para onde temos os arquivos)
+
+- O `homec` é o nome do arquivo .js (ele interpreta sem precisar da extensão)
+
+- Ao entrar no controller `homec.js`, vemos o export do módulo com a declaração do `HomeController` abaixo:
 
 ```javascript
 module.exports = function(app){
@@ -200,6 +204,21 @@ index: function(request, response){
 }
 ```
 
-9. A action de index por reagit a uma rota acionada, tem por definição a request e a response, aonde é possível compreender entradas e saídas para a tela
-10. Como response é definido o comando de render que por sua vez chamará uma view para ser literalmente renderizada na tela
-11. A tela de inicio tem um formulario com o método POST e com a action de '/login', o arquivo de rotas já tem pré-definido para entender o que deve fazer se receber essa rota: `app.post('/login', homec.login);`
+- A action de index por reagit a uma rota acionada, tem por definição a request e a response, aonde é possível compreender entradas e saídas para a tela
+
+- Como response é definido o comando de render que por sua vez chamará uma view para ser literalmente renderizada na tela
+
+- A tela de inicio tem um formulario com o método POST e com a action de '/login', o arquivo de rotas já tem pré-definido para entender o que deve fazer se receber essa rota: `app.post('/login', homec.login);`
+
+- Ao carregar a requisição do tipo POST '/login', será acionado a action do HomeController que irá realizar:
+    - Obtenção de dados do corpo da requisição por meio do `'request.body.usuario.[attr]'`(nome e senha são propriedades do objeto usuario - usuario é o name do input)
+    - É validado os dados inseridos
+    - É armazenado em uma sessão os dados do usuario por meio de 'request.session.usuarioSession = user' (usuarioSession é o nome que demos a sessão, pode ser qualquer um - user é a variável que criamos com o conteudo do corpo da requisição com os dados enviados do usuário pelo formulario)
+    - Redirecionamento (chamada de rota por meio da aplicação) para a rota '/eventos'
+    - Se os dados não baterem, ele redireciona pra tela inicial, e voltamos ao inicio da explicação do FLUXO
+
+- Ao ser acionada a rota de eventos, será executada a validação da rota abaixo que acionará a ação de listar no controller de eventos:
+    `app.get('/eventos', eventosc.listar);`
+
+- A action de listar irá renderizar a view listar dentro da pasta eventos que está dentro da pasta principal de views pela linha abaixo:
+   `response.render('eventos/listar');`

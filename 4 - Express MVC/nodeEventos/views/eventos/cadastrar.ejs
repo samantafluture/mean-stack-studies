@@ -1,0 +1,33 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Cadastro de Usuários</title>
+  </head>
+  <body>
+    <div class="page">
+      <form action="/cadastrar" method="post" class="form">
+        <input
+          type="text"
+          placeholder="Usuário"
+          id="nome"
+          name="usuario[nome]"
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          id="senha"
+          name="usuario[senha]"
+        />
+        <input
+          type="password"
+          placeholder="Confirme sua senha"
+          id="senha"
+          name="usuario[senha]"
+        />
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -7,6 +7,10 @@ module.exports = function (app) {
       // listar é o arquivo HTML com extensão .ejs
       response.render("eventos/listar", params);
     },
+    cadastrar: function (request, response) {
+      var params = { user: request.session.usuarioSession };
+      response.render("eventos/cadastrarEvento", params);
+    },
   };
   return EventosController;
 };

@@ -1,22 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Eventos</title>
   </head>
   <body class="listar-wrapper">
     <main class="lista">
-      <h1>Lista de Eventos</h1>
-      <ul>
-        <li><a href="/eventos">Lista de Eventos</a></li>
-        <li><a href="/eventos/novo">Cadastro de Eventos</a></li>
-        <li><a href="/usuarios/novo">Cadastro de Usuários</a></li>
-      </ul>
-      <p>Bem-vindo, <%= user.nome %></p>
-      <p><a href="/logout">Sair</a></p>
+      <div id="container">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eventos">Lista de Eventos</a></li>
+            <li><a href="/eventos/novo">Cadastro de Eventos</a></li>
+            <li><a href="/usuarios/novo">Cadastro de Usuários</a></li>
+          </ul>
+          <span class="logout"><a href="/logout">Sair</a></span>
+        </nav>
+        <h1>Lista de Eventos</h1>
+        <p>
+          Bem-vindo, 
+          <span class="user"><%= user.nome %></span>
+          <i class="fas fa-user"></i>
+        </p>
+      </div>
+      <table class="table-fill">
+        <thead>
+          <tr>
+            <th class="text-left">Descrição</th>
+            <th class="text-left">Data</th>
+            <th class="text-left">Preço</th>
+          </tr>
+        </thead>
+        <tbody class="table-hover">
+          <tr>
+            <td class="text-left">Hackathon</td>
+            <td class="text-left">21/02/2022</td>
+            <td class="text-left">R$ 50,00</td>
+          </tr>
+          <tr>
+            <td class="text-left">Startup Weekend</td>
+            <td class="text-left">13/03/2022</td>
+            <td class="text-left">R$ 70,00</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
+    <footer>
+      <p>Desenvolvido com &hearts;	por 
+        <a href="https://github.com/samantafluture/">Samanta Fluture</a>
+      </p>
+    </footer>
   </body>
 </html>

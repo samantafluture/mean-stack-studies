@@ -1,0 +1,35 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Cadastro de Eventos</title>
+  </head>
+  <body>
+    <div class="page">
+      <form action="/cadastrarEvento" method="post" class="form">
+        <input
+          type="text"
+          placeholder="Título"
+          id="título"
+          name="evento[titulo]"
+        />
+        <input
+          type="date"
+          placeholder="Data"
+          id="data"
+          name="evento[data]"
+        />
+        <input
+          type="number"
+          placeholder="Preço"
+          step="0.01" 
+          min="0.01"
+          id="preco"
+          name="evento[preco]"
+        />
+        <button type="submit">Cadastrar Evento</button>
+      </form>
+    </div>
+  </body>
+</html>

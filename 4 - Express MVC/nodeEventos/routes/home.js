@@ -11,5 +11,8 @@ module.exports = function (app) {
 
   // rotas eventos
   app.get("/eventos", valida, eventosc.listar);
+  app.get("/eventos/novo", eventosc.cadastrar);
+
+  // rotas cadastro
   app.get("/usuarios/novo", cadastroc.cadastrar);
 };

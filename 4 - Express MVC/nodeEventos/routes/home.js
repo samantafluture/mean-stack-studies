@@ -2,7 +2,7 @@ module.exports = function (app) {
   var valida = require("./../middlewares/valida")
   var homec = app.controllers.homec;
   var eventosc = app.controllers.eventosc;
-  var cadastroc = app.controllers.cadastroc;
+  var usuariosc = app.controllers.usuariosc;
 
   // rotas home
   app.get("/", homec.index);
@@ -11,8 +11,8 @@ module.exports = function (app) {
 
   // rotas eventos
   app.get("/eventos", valida, eventosc.listar);
-  app.get("/eventos/novo", eventosc.cadastrar);
+  app.get("/eventos/novo", eventosc.novo);
 
-  // rotas cadastro
-  app.get("/usuarios/novo", cadastroc.cadastrar);
+  // rotas usuário
+  app.get("/usuarios/novo", usuariosc.novo);
 };

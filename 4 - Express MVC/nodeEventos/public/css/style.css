@@ -17,7 +17,7 @@ body {
   box-sizing: border-box;
 }
 
-/* página de login */
+/* formulários */
 
 .form {
   position: relative;
@@ -67,7 +67,7 @@ body {
   background: #8346a1;
 }
 
-/* página de eventos */
+/* página lista de eventos */
 
 body {
 	background: #724f84;
@@ -171,10 +171,9 @@ div.table-title {
   position: absolute;
   top: 10px;
   right: 10px;
-  /* opacity: .5; */
 }
 
-/*** Table Styles **/
+/* tabela */
 
 .table-fill {
   background: white;

@@ -11,8 +11,9 @@ module.exports = function (app) {
 
   // rotas eventos
   app.get("/eventos", valida, eventosc.listar);
-  app.get("/eventos/novo", eventosc.novo);
+  app.get("/eventos/novo", valida, eventosc.novo);
 
   // rotas usuário
-  app.get("/usuarios/novo", usuariosc.novo);
+  app.get("/usuarios/novo", valida, usuariosc.novo);
+  // app.post("/usuarios/criar", valida, usuariosc.criar);
 };

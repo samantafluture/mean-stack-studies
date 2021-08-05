@@ -29,7 +29,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(cookieParser("nodeEventos"));
 app.use(expressSession());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/favicon.ico", express.static('public/images/favicon.ico'));
 
 /* Carregar o app */
 

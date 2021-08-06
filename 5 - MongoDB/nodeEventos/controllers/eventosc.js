@@ -1,4 +1,6 @@
 module.exports = function (app) {
+  var Evento = app.models.eventosm;
+
   var EventosController = {
     listar: function (request, response) {
       var params = { user: request.session.usuarioSession };

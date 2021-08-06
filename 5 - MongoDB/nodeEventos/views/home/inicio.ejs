@@ -1,32 +1,27 @@
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>DinoList | Cadastrar Usuários</title>
+    <title>DinoList | Login</title>
   </head>
   <body>
     <div class="page">
-      <form action="/usuarios/criar" method="post" class="form">
+      <form action="/login" method="post" class="form">
         <input
           type="text"
           placeholder="Usuário"
           id="nome"
-          name="usuarioNovo[nome]"
+          name="usuario[nome]"
         />
         <input
           type="password"
           placeholder="Senha"
           id="senha"
-          name="usuarioNovo[senha]"
+          name="usuario[senha]"
         />
-        <input
-          type="password"
-          placeholder="Confirme sua senha"
-          id="senha"
-          name="usuarioNovo[confirmarSenha]"
-        />
-        <button type="submit">Cadastrar Usuário</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   </body>

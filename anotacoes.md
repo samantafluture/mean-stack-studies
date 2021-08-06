@@ -222,3 +222,66 @@ index: function(request, response){
 
 - A action de listar irá renderizar a view listar dentro da pasta eventos que está dentro da pasta principal de views pela linha abaixo:
    `response.render('eventos/listar');`
+
+---
+
+# Aula 05
+
+## MongoDB
+
+- Como instalar o MongoDB no macOs sem Homebrew: [passo a passo via terminal](https://gist.github.com/Sydney-o9/9a6d4a017539cb8610a5695ae505bb61)
+
+### Primeiros comandos 
+
+- Para executar, digite `mongo` no terminal
+- Mostrar as bases de dados existentes: `show databases` ou `show dbs`
+- Mostrar a database atual: `db`
+- Para mudar para outra database: `use`
+- Para criar uma database, já passe o nome na hora de usar `use meuDB`
+- Criar uma nova collection (clientes) e inserir um registro:
+
+```bash
+db.clientes.insert({ nome: "Samanta Fluture", idade: 32 })
+```
+
+- Mostra as collections criadas: `show collections`
+- Visualizar o que tem dentro: `db.clientes.find().pretty`
+- Para sair, basta escrever `exit` ou dar `control+C`
+
+### Conceitos NoSQL
+
+- Banco de dados não-relacional
+- Estrutura:
+  - Collection -> coleção de dados, de documentos, como uma tabela
+  - Document -> como se fosse uma linha, um registro
+  - Schema -> conjunto de definição de como esse dado funciona, quais dados temos
+  - Path -> definições, nível mais baixo, definição de tipos, propriedades, chave, valor
+- Documentos não necessitam da mesma estrutura
+- Todos os registros tem um _id únicos
+
+## Mongoose
+
+### Instalar
+
+- No terminal, dentro da pasta `nodeEventos` (ou do projeto em questão): `npm i mongoose --save`
+
+### Conectar app.js com banco de dados
+
+- Usar variável global para declarar `db` e ser acessível por todo o projeto
+- Setamos conexão do mongosse e passamos uma url de conexão
+- `mongodb://` -> tipo de conexão; `27017` -> porta; `appEventos` -> nome da base de dados
+
+```javascript
+global.db = mongoose.connect("mongodb://localhost:27017/appEventos")
+```
+- Testar eventos de bancos de dados de conexão
+- Validar se ele está conectado com o código abaixo
+
+```javascript
+mongoose.connection.on("connected", function () {
+  console.log("conexão estabelecida");
+});
+```
+
+
+

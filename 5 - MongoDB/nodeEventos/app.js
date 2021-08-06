@@ -9,7 +9,7 @@ var mongoose = require("mongoose");
 
 /* Conexão com bando de dados */
 
-global.db = mongoose.connect("mongodb://localhost:27017/appEventos");
+global.db = mongoose.connect("mongodb://localhost:27017/turma30");
 
 /* Eventos de monitoramento do banco de dados */
 

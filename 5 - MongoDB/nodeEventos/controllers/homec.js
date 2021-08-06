@@ -1,28 +1,26 @@
 module.exports = function (app) {
+  var Usuario = app.models.usuariosm;
+
   var HomeController = {
     index: function (request, response) {
       response.render("home/inicio");
     },
     login: function (request, response) {
-      // obter infos dos campos do form
-      // request para utilizar o bodyParser
       var nome = request.body.usuario.nome;
       var senha = request.body.usuario.senha;
+      var query = { nome: nome, senha: senha };
 
-      // simulação de login
-      if (nome == "admin" && senha == "admin") {
-        // vamos armazenar as infos para a sessão
-        var user = request.body.usuario;
-        // criar a sessão
-        request.session.usuarioSession = user;
-        response.redirect("eventos");
-      } else {
-        // vamos redirecionar para a tela inicial
-        response.redirect("/");
-      }
+      Usuario.findOne(query).exec(function (erro, usuario) {
+        if (erro) {
+          console.log("Erro: " + erro);
+          response.redirect("/");
+        } else {
+          request.session.usuarioSession = usuario;
+          response.redirect("eventos");
+        }
+      });
     },
     logout: function (request, response) {
-      // destruindo a sessão
       request.session.destroy();
       response.redirect("/");
     },

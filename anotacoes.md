@@ -263,16 +263,17 @@ db.clientes.insert({ nome: "Samanta Fluture", idade: 32 })
 
 ### Instalar
 
+- Rodar o `npm i` para instalar o restante das dependências (node_modules)
 - No terminal, dentro da pasta `nodeEventos` (ou do projeto em questão): `npm i mongoose --save`
 
 ### Conectar app.js com banco de dados
 
 - Usar variável global para declarar `db` e ser acessível por todo o projeto
 - Setamos conexão do mongosse e passamos uma url de conexão
-- `mongodb://` -> tipo de conexão; `27017` -> porta; `appEventos` -> nome da base de dados
+- `mongodb://` -> tipo de conexão; `27017` -> porta; `turma30` -> nome da base de dados
 
 ```javascript
-global.db = mongoose.connect("mongodb://localhost:27017/appEventos")
+global.db = mongoose.connect("mongodb://localhost:27017/turma30")
 ```
 - Testar eventos de bancos de dados de conexão
 - Validar se ele está conectado com o código abaixo
@@ -282,6 +283,15 @@ mongoose.connection.on("connected", function () {
   console.log("conexão estabelecida");
 });
 ```
+
+### Criar database no MongoDB
+
+- Criar database `turma` e inserir um primeiro registro na collection `usuarios`:
+
+`use turma30`
+
+`db.usuarios.insert({ nome: 'Samanta', senha: '123' })`
+
 
 
 

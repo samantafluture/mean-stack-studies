@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <title>DinoList | Eventos</title>
   </head>
   <body class="listar-wrapper">
@@ -23,7 +28,7 @@
         </nav>
         <h1>Lista de Eventos</h1>
         <p>
-          Bem-vindx, 
+          Bem-vindx,
           <span class="user"><%= user.nome %></span>
           <i class="fas fa-user"></i>
         </p>
@@ -37,21 +42,19 @@
           </tr>
         </thead>
         <tbody class="table-hover">
+          <% eventosList.forEach(function(evento, index){ %>
           <tr>
-            <td class="text-left">Hackathon</td>
-            <td class="text-left">21/02/2022</td>
-            <td class="text-left">R$ 50,00</td>
+            <td><%= evento.descricao %></td>
+            <td><%= momentParam(evento.data).format("DD/MM/YYYY") %></td>
+            <td>R$ <%= evento.preco %></td>
           </tr>
-          <tr>
-            <td class="text-left">Startup Weekend</td>
-            <td class="text-left">13/03/2022</td>
-            <td class="text-left">R$ 70,00</td>
-          </tr>
+          <% }) %>
         </tbody>
       </table>
     </main>
     <footer>
-      <p>Desenvolvido com &hearts;	por 
+      <p>
+        Desenvolvido com &hearts; por
         <a href="https://github.com/samantafluture/">Samanta Fluture</a>
       </p>
     </footer>

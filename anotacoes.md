@@ -292,6 +292,10 @@ mongoose.connection.on("connected", function () {
 
 `db.usuarios.insert({ nome: 'Samanta', senha: '123' })`
 
+---
+
+# Aula 06
+
 
 
 

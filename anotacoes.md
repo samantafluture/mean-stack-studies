@@ -1,17 +1,20 @@
 # Aula 01
 
 ## Plugins
+
 - EditorConfig
-    - file > preferences > settings
+  - file > preferences > settings
 - Color Highlight
 - Color Picker
 - GitLens
 - GitHistory
 
 ## Programas
+
 - [Git Fork: Git visual](https://git-fork.com/)
 
 ## Instalaçã MongoDB via Brew
+
 [Como instalar MongoDB para Mac OS](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 [Instalar via terminal sem Brew](https://gist.github.com/Sydney-o9/9a6d4a017539cb8610a5695ae505bb61)
 
@@ -30,6 +33,7 @@ https://github.com/marianalino/impacta-turma-30
 ## Funções
 
 3 formas de utilizar funções:
+
 1. diretamente por ela: `var soma = nomeDaFuncao(x, y);``
 2. usando variável para referenciar: `var funcao = funcao;`
 3. funcao anônima: `var calculo = function(x,y) (return x+y)`
@@ -43,9 +47,9 @@ https://github.com/marianalino/impacta-turma-30
 - Retorno de uma função
 
 ```javascript
-function funcao (callback) {
-    // faca algo
-    callback();
+function funcao(callback) {
+  // faca algo
+  callback();
 }
 ```
 
@@ -61,14 +65,14 @@ var fs = require("fs");
 - `http` é um módulo para criar app que vai funcionar como servidor web
 - `fs` é um módulo de file system que permite ler e gravar arquivos
 
-2. Criar uma função `createServer()` do módulo http que recebe uma função de callback com 2 parâmetros: **requisição** e **resposta**. Dentro haverá um método `readFile()` com 2 parâmetros: 
+2. Criar uma função `createServer()` do módulo http que recebe uma função de callback com 2 parâmetros: **requisição** e **resposta**. Dentro haverá um método `readFile()` com 2 parâmetros:
 
 - arquivo a ser lido que iremos criar para que o navegador interprete
 - opcional, mas funciona como callback (é o que será executado conforme o arquivo for lido e com o que faremos com o arquivo)
 
 Ao utilizar o segundo parâmetro, temos a possibilidade de uso de 2 parâmetros para a tratativa do arquivo html: possível erro e conteúdo da página.
 
-Por fim, o `.end()` finaliza a tratativa de resposta. 
+Por fim, o `.end()` finaliza a tratativa de resposta.
 
 ```javascript
 var server = http.createServer(function (request, response) {
@@ -84,7 +88,7 @@ var server = http.createServer(function (request, response) {
       });
       response.write(conteudo);
     }
-    response.end(); 
+    response.end();
   });
 });
 ```
@@ -131,7 +135,7 @@ server.listen(port, function () {
 
 Ler mais sobre [aqui](https://semver.org/lang/pt-BR/).
 
-A ideia é ter um controle sobre as versões, para que se saiba o que está acontecendo em cada versão. Cada número significa uma coisa. 
+A ideia é ter um controle sobre as versões, para que se saiba o que está acontecendo em cada versão. Cada número significa uma coisa.
 
 ## Iniciar um projeto Node
 
@@ -141,12 +145,12 @@ A ideia é ter um controle sobre as versões, para que se saiba o que está acon
 
 3. Inicie o node: `npm init`
 
-* este comando inicializa um projeto node
-* criará um package.json com configurações
+- este comando inicializa um projeto node
+- criará um package.json com configurações
 
 4. Preencha as informações do projeto de acordo com o que o npm irá apresentar, tal como nome do projeto, instalação de dependências, etc
 
-* ao dar `enter` você concorda com as sugestões 
+- ao dar `enter` você concorda com as sugestões
 
 ## Instalar módulos e dependências de desenvolvimento
 
@@ -157,6 +161,7 @@ A ideia é ter um controle sobre as versões, para que se saiba o que está acon
 ## Outros arquivos de config
 
 .gitigonore
+
 - Incluir aqui, por exemplo, a pasta `node_modules/`
 
 ## Criar projeto express
@@ -189,10 +194,10 @@ app.get("/", homec.index);
 - Ao entrar no controller `homec.js`, vemos o export do módulo com a declaração do `HomeController` abaixo:
 
 ```javascript
-module.exports = function(app){
+module.exports = function (app) {
   var HomeController = {};
   return HomeController;
-}
+};
 ```
 
 7. Dentro da variável do HomeController, declaramos nossas actions que serão as ações a serem tomadas pela aplicação quando rotas forem acionadas
@@ -211,17 +216,18 @@ index: function(request, response){
 - A tela de inicio tem um formulario com o método POST e com a action de '/login', o arquivo de rotas já tem pré-definido para entender o que deve fazer se receber essa rota: `app.post('/login', homec.login);`
 
 - Ao carregar a requisição do tipo POST '/login', será acionado a action do HomeController que irá realizar:
-    - Obtenção de dados do corpo da requisição por meio do `'request.body.usuario.[attr]'`(nome e senha são propriedades do objeto usuario - usuario é o name do input)
-    - É validado os dados inseridos
-    - É armazenado em uma sessão os dados do usuario por meio de 'request.session.usuarioSession = user' (usuarioSession é o nome que demos a sessão, pode ser qualquer um - user é a variável que criamos com o conteudo do corpo da requisição com os dados enviados do usuário pelo formulario)
-    - Redirecionamento (chamada de rota por meio da aplicação) para a rota '/eventos'
-    - Se os dados não baterem, ele redireciona pra tela inicial, e voltamos ao inicio da explicação do FLUXO
+
+  - Obtenção de dados do corpo da requisição por meio do `'request.body.usuario.[attr]'`(nome e senha são propriedades do objeto usuario - usuario é o name do input)
+  - É validado os dados inseridos
+  - É armazenado em uma sessão os dados do usuario por meio de 'request.session.usuarioSession = user' (usuarioSession é o nome que demos a sessão, pode ser qualquer um - user é a variável que criamos com o conteudo do corpo da requisição com os dados enviados do usuário pelo formulario)
+  - Redirecionamento (chamada de rota por meio da aplicação) para a rota '/eventos'
+  - Se os dados não baterem, ele redireciona pra tela inicial, e voltamos ao inicio da explicação do FLUXO
 
 - Ao ser acionada a rota de eventos, será executada a validação da rota abaixo que acionará a ação de listar no controller de eventos:
-    `app.get('/eventos', eventosc.listar);`
+  `app.get('/eventos', eventosc.listar);`
 
 - A action de listar irá renderizar a view listar dentro da pasta eventos que está dentro da pasta principal de views pela linha abaixo:
-   `response.render('eventos/listar');`
+  `response.render('eventos/listar');`
 
 ---
 
@@ -231,7 +237,7 @@ index: function(request, response){
 
 - Como instalar o MongoDB no macOs sem Homebrew: [passo a passo via terminal](https://gist.github.com/Sydney-o9/9a6d4a017539cb8610a5695ae505bb61)
 
-### Primeiros comandos 
+### Primeiros comandos
 
 - Para executar, digite `mongo` no terminal
 - Mostrar as bases de dados existentes: `show databases` ou `show dbs`
@@ -257,7 +263,7 @@ db.clientes.insert({ nome: "Samanta Fluture", idade: 32 })
   - Schema -> conjunto de definição de como esse dado funciona, quais dados temos
   - Path -> definições, nível mais baixo, definição de tipos, propriedades, chave, valor
 - Documentos não necessitam da mesma estrutura
-- Todos os registros tem um _id únicos
+- Todos os registros tem um \_id únicos
 
 ## Mongoose
 
@@ -273,8 +279,9 @@ db.clientes.insert({ nome: "Samanta Fluture", idade: 32 })
 - `mongodb://` -> tipo de conexão; `27017` -> porta; `turma30` -> nome da base de dados
 
 ```javascript
-global.db = mongoose.connect("mongodb://localhost:27017/turma30")
+global.db = mongoose.connect("mongodb://localhost:27017/turma30");
 ```
+
 - Testar eventos de bancos de dados de conexão
 - Validar se ele está conectado com o código abaixo
 
@@ -308,21 +315,67 @@ mongoose.connection.on("connected", function () {
 ## Fazendo CRUD via Postman
 
 **CRUD**
+
 - get
 - post
 - patch / put
 - delete
 
 **Promises**
+
 - você cria uma solicitação para o backend esperando uma promessa
 - mas nem sempre terá um retorno
 - chamada assíncrona, vai "tocando sua vida enquanto espera um resultado"
 
-**API**
+**Fetch**
+
+- instar `npm i node-fetch --save`
 - vamos usar o [viaCep](https://viacep.com.br/) neste projeto (API aberto)
+- fetch faz uma requisição e quando ela estiver pronta
+- ela passará para o then a resposta do retorno
+- digamos que isso leve 5s, então depois de 5s a resposta terá esse retorno
 
+**Primeiro .then(): resposta pendente**
 
+```javascript
+fetch(url).then((resposta) => {
+  console.log(resposta);
+  return resposta.json();
+});
+```
 
+- depois temos que fazer outro `then` tratando a saída deste retorno
+- pois o primeiro apenas fala "se deu certo ou não"
+- a promise aqui neste momento tá ok, porém pendente (os headers da requisição)
+- já o segundo `then` carrega de fato a saída de dados
+- pois finalmente está pronto (o body da requisição)
+- nesta saída, vamos trabalhar com as infos que queremos
 
+**Primeiro .then(): resposta oficial => saída de dados**
 
+```javascript
+fetch(url)
+  .then((resposta) => {
+    console.log(resposta);
+    return resposta.json();
+  })
+  .then((saida) => {
+    endereco = saida;
+    console.log(endereco);
+  });
+```
+
+De forma simplificada e elegante:
+
+```javascript
+fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+    endereco = data;
+    console.log(endereco);
+  });
+```
+
+- o console.log precisa sempre estar dentro do segundo .then()
+- pois é assíncrona e poderia via vazio se estive fora
 

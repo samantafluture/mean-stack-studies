@@ -14,8 +14,8 @@ Estudos sobre **MEAN Stack** baseados no curso ao vivo da [Impacta](https://impa
 Formulário de Login usando Node.js e Express.
 
 <figure>
-<figcaption>Fig.1 - Tela Lista Cadastro</figcaption>
-    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/4%20-%20Express%20MVC/nodeEventos/public/images/tela-lista-eventos.png?raw=true">
+<figcaption>Fig.1 - Tela Lista de Eventos</figcaption>
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/5%20-%20MongoDB/nodeEventos/public/images/tela-eventos-atual.png?raw=true">
 </figure>
 
 <figure>

@@ -296,6 +296,21 @@ mongoose.connection.on("connected", function () {
 
 # Aula 06
 
+## Webservice
+
+- bater numa url que traz um registro
+- vamos usar o json-server para simular um backend
+- instalar o `json-server` via: `npm i json-server --save`
+- criar um arquivo `db.json` com um objeto json
+- em seguida, rodar `json-server db.json` na pasta do projeto
+- então visite `localhost:3000` para ver seu json no ar
+
+## Fazendo CRUD via Postman
+
+- get
+- post
+- patch / put
+- delete
 
 
 

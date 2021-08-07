@@ -1,0 +1,24 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Camiseta",
+      "preco": 60
+    },
+    {
+      "id": 2,
+      "descricao": "Moletom",
+      "preco": 85
+    },
+    {
+      "id": 3,
+      "descricao": "Boné",
+      "preco": 45
+    },
+    {
+      "descricao": "Mochila",
+      "preco": 115,
+      "id": 4
+    }
+  ]
+}

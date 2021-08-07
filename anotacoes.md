@@ -307,10 +307,22 @@ mongoose.connection.on("connected", function () {
 
 ## Fazendo CRUD via Postman
 
+**CRUD**
 - get
 - post
 - patch / put
 - delete
+
+**Promises**
+- você cria uma solicitação para o backend esperando uma promessa
+- mas nem sempre terá um retorno
+- chamada assíncrona, vai "tocando sua vida enquanto espera um resultado"
+
+**API**
+- vamos usar o [viaCep](https://viacep.com.br/) neste projeto (API aberto)
+
+
+
 
 
 

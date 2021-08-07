@@ -4,6 +4,7 @@ var express = require("express");
 var load = require("express-load");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var ObjectId = require("mongodb").ObjectId;
 
 /* Configurações */
 
@@ -37,13 +38,66 @@ app.get("/eventos", function (request, response) {
   });
 });
 
-app.get("/evento/:id", function (request, response) {});
+app.get("/evento/:id", function (request, response) {
+  var id = request.params.id;
+  Evento.findById(id, function (erro, retorno) {
+    if (erro) {
+      response.json(erro);
+    } else {
+      response.json(retorno);
+    }
+  });
+});
 
-app.post("/evento", function (request, response) {});
+app.post("/evento", function (request, response) {
+  var evento = {
+    descricao: request.body.descricao,
+    data: request.body.data,
+    preco: request.body.preco,
+  };
 
-app.put("/evento/:id", function (request, response) {});
+  Evento.create(evento, function (erro, retorno) {
+    if (erro) {
+      response.json(erro);
+    } else {
+      response.json(retorno);
+    }
+  });
+});
 
-app.delete("/evento/:id", function (request, response) {});
+app.put("/evento/:id", function (request, response) {
+  var id = request.params.id;
+  var evento = {
+    descricao: request.body.descricao,
+    data: request.body.data,
+    preco: request.body.preco,
+  };
+  
+  Evento.findByIdAndUpdate(id, evento, function (erro, retorno) {
+    if (erro) {
+      response.json(erro);
+    } else {
+      response.json(retorno);
+    }
+  });
+});
+
+app.delete("/evento/:id", function (request, response) {
+  var id = request.params.id;
+  var evento = {
+    descricao: request.body.descricao,
+    data: request.body.data,
+    preco: request.body.preco,
+  };
+  
+  Evento.findOneAndDelete(id, evento, function (erro, retorno) {
+    if (erro) {
+      response.json(erro);
+    } else {
+      response.json(retorno);
+    }
+  });
+});
 
 /* Rodar servidor */
 

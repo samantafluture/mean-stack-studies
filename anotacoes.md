@@ -379,3 +379,7 @@ fetch(url)
 - o console.log precisa sempre estar dentro do segundo .then()
 - pois é assíncrona e poderia via vazio se estive fora
 
+---
+
+# Aula 07
+

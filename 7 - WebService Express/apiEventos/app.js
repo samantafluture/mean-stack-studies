@@ -65,32 +65,93 @@ app.post("/evento", function (request, response) {
   });
 });
 
+// primeira forma
 app.put("/evento/:id", function (request, response) {
   var id = request.params.id;
-  var evento = {
-    descricao: request.body.descricao,
-    data: request.body.data,
-    preco: request.body.preco,
-  };
-  
-  Evento.findByIdAndUpdate(id, evento, function (erro, retorno) {
+
+  // fazemos a atualização no sucesso
+  Evento.findById(id, function (erro, evento) {
     if (erro) {
       response.json(erro);
     } else {
-      response.json(retorno);
+      evento.descricao = request.body.descricao;
+      evento.data = request.body.data;
+      evento.preco = request.body.preco;
+
+      evento.save(function (erro, eventoAtualizado) {
+        if (erro) {
+          response.json(erro);
+        } else {
+          response.json(eventoAtualizado);
+        }
+      });
     }
   });
 });
 
+// segunda forma
+// app.put("/evento/:id", function (request, response) {
+//   var id = request.params.id;
+//   var evento = {
+//     descricao: request.body.descricao,
+//     data: request.body.data,
+//     preco: request.body.preco,
+//   };
+
+//   Evento.findByIdAndUpdate(id, evento, function (erro, retorno) {
+//     if (erro) {
+//       response.json(erro);
+//     } else {
+//       response.json(retorno);
+//     }
+//   });
+// });
+
+// app.delete("/evento/:id", function (request, response) {
+//   var id = request.params.id;
+
+//   Evento.findById(id, function (erro, evento) {
+//     if (erro) {
+//       response.json(erro);
+//     } else {
+//       if (evento) {
+//         var descricao = evento.descricao;
+//         Evento.deleteOne(evento, function (erro, eventoDeletado) {
+//           if (erro) {
+//             response.json(erro);
+//           } else {
+//             response.send("Evento " + descricao + " removido");
+//           }
+//         });
+//       } else {
+//         response.json(erro);
+//       }
+//     }
+//   });
+// });
+
+// segunda forma
+// app.delete("/evento/:id", function (request, response) {
+//   var id = request.params.id;
+//   var evento = {
+//     descricao: request.body.descricao,
+//     data: request.body.data,
+//     preco: request.body.preco,
+//   };
+
+//   Evento.findOneAndDelete(id, evento, function (erro, retorno) {
+//     if (erro) {
+//       response.json(erro);
+//     } else {
+//       response.json(retorno);
+//     }
+//   });
+// });
+
 app.delete("/evento/:id", function (request, response) {
   var id = request.params.id;
-  var evento = {
-    descricao: request.body.descricao,
-    data: request.body.data,
-    preco: request.body.preco,
-  };
-  
-  Evento.findOneAndDelete(id, evento, function (erro, retorno) {
+
+  Evento.deleteOne(id, function (erro, retorno) {
     if (erro) {
       response.json(erro);
     } else {

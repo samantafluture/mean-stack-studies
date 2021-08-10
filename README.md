@@ -8,10 +8,16 @@ Estudos sobre **MEAN Stack** baseados no curso ao vivo da [Impacta](https://impa
 - Express
 - Angular
 - Node.js
+- EJS
 
 ## Em desenvolvimento
 
-Formulário de Login usando Node.js e Express.
+- Banco de dados com MongoDB
+- Web application MVC com Express, MongoDB e EJS
+- API Restful com Node.js, Express e Mongoose
+- Front-end com AngularJS
+
+## Alguns screenshots
 
 <figure>
 <figcaption>Fig.1 - Tela Lista de Eventos</figcaption>
@@ -26,6 +32,11 @@ Formulário de Login usando Node.js e Express.
 <figure>
     <figcaption>Fig.3 - Tela Cadastrar Usuário</figcaption>
     <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-cadastra-usuario.png?raw=true">
+</figure>
+
+<figure>
+    <figcaption>Fig.4 - Tela Login</figcaption>
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-login.png?raw=true">
 </figure>
 
 <figure>

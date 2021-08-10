@@ -1,5 +1,5 @@
 module.exports = function (app) {
-  var valida = require("./../middlewares/valida")
+  var valida = require("../middlewares/valida")
   var homec = app.controllers.homec;
   var eventosc = app.controllers.eventosc;
   var usuariosc = app.controllers.usuariosc;

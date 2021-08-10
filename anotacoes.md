@@ -381,9 +381,72 @@ fetch(url)
 
 ---
 
-# Aula 07
+# Aula 07 e 08
 
 ## Angular JS
 
+- angular (de angular.module) é uma palavra reservada do Angular para descrevermos o módulo
+- o primeiro parâmetro usado é o 'appAngular' (que é o que declaramos no ng-app na tag HTML) pois é o nome da aplicação que colocamos na declaração do código HTML
+- o segundo parâmetro é usado para declaração de dependencias da aplicação
+- Nossa aplicação não tem nenhuma, portanto deixaremos uma lista vazia
 
+`var app = angular.module("appAngular", []);`
+
+- a partir da declaração do módulo angular, vamos utilizar a var 'app' como nossa aplicação e então executaremos a função de controller
+- declaramos o nome do controller como 'CTLprincipal' e o seu apelido como 'ctl'
+- o primeiro parâmetro é o nome do controller
+- o segundo parâmetro são as dependências que utilizaremos no controller
+- utilizaremos a dependência do HTTP similar a que usamos no NODE
+- por padrão no AngularJS todo os módulos tem o $ na frente
+- se declararmos mais de uma dependência, é necessário utilizar na 'function' a mesma ordem pois é a forma que o angularJS interpreta suas dependências
+
+`app.controller("CTLprincipal", ['$http', '$url', '$location', function($http, $url, $location)]){`
+
+- caso a declaração na function mude, os nomes seguem o padrão colocado nas dependencias antes de function - o nome dentro de 'function' é apenas um ALIAS, o que de fato importa é a ordem das dependencias antes de function - NÃO É OBRIGATÓRIO TER O MESMO NOME DA DEPENDENCIA, APENAS É UMA BOA PRÁTICA
+- agora criaremos uma variável baseada no this (referencia própria)
+- armazenaremos nela a lista de eventos que será importada para nós
+
+- é necessário salvar o 'this' em uma variável pois a instância de um this é referente aonde ele existe, logo se criarmos uma function abaixo desse this, o this dentro da function não será o mesmo externo, então se armazenamos o this em uma variavel, conseguimos salvar a referencia e usar em outro local/function
+- crio uma lista vazia de eventos para poder ser populada e posteriormente lida no HTML para exibir na tela
+
+`var self = this;`
+`self.listaEventos = [];`
+
+- criaremos a função para acessar o webservice
+- utilizamos o HTTP para criar uma requisição de GET que acessa a nossa WEBSERVICE e então processa 2 possibilidades: sucesso e erro 
+- aqui utilizamos uma promise implícita, similar ao fetch que usamos anteriormente
+- a diferença é que não usamos 2 then, usamos apenas 1 que se sucesso, vem todas as informações da promise e o 'data' com os dados de retorno
+- quando o get finalizar, usaremos o then que processa as informações que foram retornadas e então o primeiro valor do then é o SUCESSO, o segundo é o ERRO
+- exibição de teste do retorno no console do navegador
+- aqui no sucesso pegamos a resposta do webservice e usamos o 'data' que são os dados retornados, e atribuimo o valor no self.listaEventos, que é a lista criada fora da função
+- chamamos a função para executar após processar o código existente, que carregará ops eventos para então colocarmos no código HTML
+
+```javascript
+    var app = angular.module("appAngular", []);
+
+    app.controller("CTLprincipal", ['$http', function($http) {
+        
+        var self = this;        
+        self.listaEventos = [];
+        var listarEventos = function() {
+            return $http.get('http://localhost:3200/eventos')
+                .then(function(resposta) {                    
+                    console.log(resposta.data);
+                    self.listaEventos = resposta.data;
+                }, function(erro) {
+                    console.log(erro)
+                    alert('Acontece um erro');
+                })
+        }
+        listarEventos();
+    }])
+```
+- evento é o item individual da lista retornada pelo webservice que será executado e lido para montar cada linha de retorno
+
+```html
+<tr ng-repeat="evento in ctl.listaEventos">
+<td>{{ evento.descricao }}</td>
+<td>{{ evento.data | date:'MM/dd/yyyy' }}</td>
+<td>R$ {{ evento.preco }}</td>
+```
 

@@ -15,22 +15,22 @@ Formulário de Login usando Node.js e Express.
 
 <figure>
 <figcaption>Fig.1 - Tela Lista de Eventos</figcaption>
-    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/5%20-%20MongoDB/nodeEventos/public/images/tela-eventos-atual.png?raw=true">
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-eventos-atual.png?raw=true">
 </figure>
 
 <figure>
     <figcaption>Fig.2 - Tela Cadastrar Evento</figcaption>
-    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/4%20-%20Express%20MVC/nodeEventos/public/images/tela-cadastra-evento.png?raw=true">
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-cadastra-evento.png?raw=true">
 </figure>
 
 <figure>
     <figcaption>Fig.3 - Tela Cadastrar Usuário</figcaption>
-    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/4%20-%20Express%20MVC/nodeEventos/public/images/tela-cadastra-usuario.png?raw=true">
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-cadastra-usuario.png?raw=true">
 </figure>
 
 <figure>
     <figcaption>Fig.4 - Tela Login</figcaption>
-    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/4%20-%20Express%20MVC/nodeEventos/public/images/tela-login.png?raw=true">
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-login.png?raw=true">
 </figure>
 
 Repositório em construção com :coffee: &nbsp;e :heart:.

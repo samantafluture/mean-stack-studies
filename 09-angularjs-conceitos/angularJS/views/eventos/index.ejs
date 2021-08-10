@@ -36,6 +36,36 @@
             </tr>
         </tbody>
     </table>
+    <div>
+        <h1>
+            <span class="blue">&lt;</span>Cadastro<span class="blue">&gt;</span> <span class="yellow">de Eventos</pan>
+        </h1>
+        <form name="incluirEvento" ng-submit="ctl.criarEvento()" class="container form">
+          <input
+            type="text"
+            placeholder="Descrição"
+            id="descricao"
+            name="descricao"
+            ng-model="ctl.novoEvento.descricao"
+          />
+          <input
+            type="date"
+            placeholder="Data"
+            id="data"
+            name="data"
+            ng-model="ctl.novoEvento.data"
+          />
+          <input
+            type="number"
+            placeholder="Preço"
+            id="preco"
+            name="preco"
+            ng-model="ctl.novoEvento.preco"
+          />
+          <button type="submit">Adicionar Evento</button>
+        </form>
+      </div>
+
 </body>
 
 <script>
@@ -46,6 +76,7 @@
         
         var self = this;        
         self.listaEventos = [];
+        self.novoEvento = {};
 
         var listarEventos = function() {
             return $http.get('http://localhost:3200/eventos')
@@ -58,6 +89,23 @@
                 })
         }
         listarEventos();
+
+        self.criarEvento = function(){
+            $http({
+                url: 'http://localhost:3200/evento',
+                method: 'POST',
+                data: self.novoEvento,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function(resposta){
+                self.novoEvento = {};
+            }, function(erro){
+                console.log(erro);
+                alert("erro!");
+            }).then(listarEventos);
+        }
+
     }])
 
 </script>

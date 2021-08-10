@@ -1,12 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eventos</title>
-  </head>
-  <body>
-    <h1>Eventos</h1>
-  </body>
+<html lang="en" ng-app="appAngular">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Eventos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+
+<!-- CTL é abreviação para ConTroLler-->
+<body ng-controller="CTLprincipal as ctl">
+    <h1><span class="blue">&lt;</span>Lista<span class="blue">&gt;</span> <span class="yellow">de Eventos</pan></h1>
+        <h2>Criado com &hearts; por <a href="https://github.com/pablorgarcia" target="_blank">Samanta Fluture</a></h2>
+
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Data</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- evento é o item individual da lista retornada pelo webservice que será executado e lido para montar cada linha de retorno -->
+                <tr ng-repeat="evento in ctl.listaEventos">
+                    <td>{{ evento.descricao }}</td>
+                    <td>{{ evento.data | date:'MM/dd/yyyy @ h:mma' }}</td>
+                    <td>R$ {{ evento.preco }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+<script>
+    // angular (de angular.module) é uma palavra reservada do Angular para descrevermos o módulo
+    // o primeiro parâmetro usado é o 'appAngular' (que é o que declaramos no ng-app na tag HTML) pois é o nome da aplicação que colocamos na declaração do código HTML
+    // o segundo parâmetro é usado para declaração de dependencias da aplicação. Nossa aplicação não tem nenhuma, portanto deixaremos uma lista vazia
+    var app = angular.module("appAngular", []);
+    // a partir da declaração do módulo angular, vamos utilizar a var 'app' como nossa aplicação e então executaremos a função de controller
+    // na linha 15 declaramos o nome do controller como 'CTLprincipal' e o seu apelido como 'ctl'
+
+    app.controller("CTLprincipal", ['$http', function($http) {
+        // o primeiro parâmetro é o nome do controller
+        // o segundo parâmetro são as dependências que utilizaremos no controller
+        // utilizaremos a dependência do HTTP similar a que usamos no NODE
+        // por padrão no AngularJS todo os módulos tem o $ na frente
+        // se declararmos mais de uma dependência, é necessário utilizar na 'function' a mesma ordem pois é a forma que o angularJS interpreta suas dependências
+        // app.controller("CTLprincipal", ['$http', '$url', '$location', function($http, $url, $location)]){ <- caso a declaração na function mude, os nomes seguem o padrão colocado nas dependencias antes de function - o nome dentro de 'function' é apenas um ALIAS, o que de fato importa é a ordem das dependencias antes de function - NÃO É OBRIGATÓRIO TER O MESMO NOME DA DEPENDENCIA, APENAS É UMA BOA PRÁTICA
+        // agora criaremos uma variável baseada no this (referencia própria)
+        // armazenaremos nela a lista de eventos que será importada para nós
+        var self = this;
+        // é necessário salvar o 'this' em uma variável pois a instância de um this é referente aonde ele existe, logo se criarmos uma function abaixo desse this, o this dentro da function não será o mesmo externo, então se armazenamos o this em uma variavel, conseguimos salvar a referencia e usar em outro local/function
+        // crio uma lista vazia de eventos para poder ser populada e posteriormente lida no HTML para exibir na tela
+        self.listaEventos = [];
+        // criaremos a função para acessar o webservice
+        var listarEventos = function() {
+            //utilizamos o HTTP para criar uma requisição de GET que acessa a nossa WEBSERVICE e então processa 2 possibilidades: sucesso e erro 
+            // aqui utilizamos uma promise implícita, similar ao fetch que usamos anteriormente
+            // a diferença é que não usamos 2 then, usamos apenas 1 que se sucesso, vem todas as informações da promise e o 'data' com os dados de retorno
+            return $http.get('http://localhost:3200/eventos')
+                .then(function(resposta) {
+                    // quando o get finalizar, usaremos o then que processa as informações que foram retornadas e então o primeiro valor do then é o SUCESSO, o segundo é o ERRO
+                    // exibição de teste do retorno no console do navegador
+                    console.log(resposta.data);
+                    // aqui no sucesso pegamos a resposta do webservice e usamos o 'data' que são os dados retornados, e atribuimo o valor no self.listaEventos, que é a lista criada fora da função
+                    self.listaEventos = resposta.data;
+                }, function(erro) {
+                    console.log(erro)
+                    alert('Acontece um erro');
+                })
+        }
+        // chamamos a função para executar após processar o código existente, que carregará ops eventos para então colocarmos no código HTML
+        listarEventos();
+    }])
+
+</script>
+
 </html>

@@ -28,7 +28,7 @@
                 <!-- evento é o item individual da lista retornada pelo webservice que será executado e lido para montar cada linha de retorno -->
                 <tr ng-repeat="evento in ctl.listaEventos">
                     <td>{{ evento.descricao }}</td>
-                    <td>{{ evento.data | date:'MM/dd/yyyy @ h:mma' }}</td>
+                    <td>{{ evento.data | date:'MM/dd/yyyy' }}</td>
                     <td>R$ {{ evento.preco }}</td>
                 </tr>
             </tbody>

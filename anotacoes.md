@@ -381,7 +381,7 @@ fetch(url)
 
 ---
 
-# Aula 07 e 08
+# Aula 07
 
 ## Angular JS
 
@@ -460,4 +460,10 @@ fetch(url)
 <td>{{ evento.data | date:'dd/MM/yyyy' }}</td>
 <td>{{ evento.preco | currency: 'R$'}}</td>
 ```
+
+---
+
+# Aula 078
+
+## Angular 8 (atual)
 

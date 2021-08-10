@@ -40,8 +40,8 @@ Estudos sobre **MEAN Stack** baseados no curso ao vivo da [Impacta](https://impa
 </figure>
 
 <figure>
-    <figcaption>Fig.4 - Tela Login</figcaption>
-    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/05-mongodb/nodeEventos/public/images/tela-login.png?raw=true">
+    <figcaption>Fig.5 - Tela Lista de Eventos em AngularJS</figcaption>
+    <img src="https://github.com/samantafluture/mean-stack-studies/blob/main/09-angularjs-conceitos/angularJS/public/images/screenshot-1.png?raw=true">
 </figure>
 
 Repositório em construção com :coffee: &nbsp;e :heart:.

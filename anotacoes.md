@@ -447,6 +447,17 @@ fetch(url)
 <tr ng-repeat="evento in ctl.listaEventos">
 <td>{{ evento.descricao }}</td>
 <td>{{ evento.data | date:'MM/dd/yyyy' }}</td>
-<td>R$ {{ evento.preco }}</td>
+<td>{{ evento.preco | currency: 'R$'}}</td>
+```
+
+### Pipe
+
+- filtragem de informação
+- pode formatar visualmente um dado para exibir na tela
+
+```html
+<td>{{ evento.descricao }}</td>
+<td>{{ evento.data | date:'dd/MM/yyyy' }}</td>
+<td>{{ evento.preco | currency: 'R$'}}</td>
 ```
 

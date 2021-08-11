@@ -589,3 +589,12 @@ export class AppExemplo1Component {
   ];
 }
 ```
+
+### Criar um componente na mão
+
+1. Criar pasta `/components`
+2. Criar pasta `/app-exemplo1`
+3. Criar arquivo `component.ts` (decorator e classe)
+4. Criar arquivo `component.html`
+5. Criar arquivo `component.css`
+6. Registrar/declarar/importar o componente no arquivom `app.module.ts`

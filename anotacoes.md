@@ -467,3 +467,35 @@ fetch(url)
 
 ## Angular 8 (atual)
 
+Fluxo:
+
+### 1. angular.json
+
+- tudo nasce pelo `angular.json`:
+  - qual o arquivo de index (`index.html`)
+  - qual arquivo main (`main.ts`)
+  - qual arquivo de estilo
+  - qual a pasta final de build
+
+  ### 2. main.ts
+
+  - carrega o módulo da app
+  - inicializa o módulo da app
+  - se der erro, mostra no console
+
+  ### 3. app.module.ts
+
+  - todo novo componente deve ser declarado
+  - fala quais módulos são declaros
+  - qual componente tem que inicializar
+
+### 4. app.component.ts
+
+- o componente inicializa primeiro
+- selectior é a tag a ser carregada no index.html
+- este pode ser o nome que quisermos
+
+### 5. html & css do componente
+
+- aqui é o html e o css do componente que irá aparecer na tela
+

@@ -598,3 +598,8 @@ export class AppExemplo1Component {
 4. Criar arquivo `component.html`
 5. Criar arquivo `component.css`
 6. Registrar/declarar/importar o componente no arquivom `app.module.ts`
+
+### Links
+
+[Documentação](https://angular.io/guide/component-overview)
+[Material Angular UI](https://material.angular.io/components/autocomplete/overview)

@@ -472,30 +472,86 @@ Fluxo:
 ### 1. angular.json
 
 - tudo nasce pelo `angular.json`:
-  - qual o arquivo de index (`index.html`)
-  - qual arquivo main (`main.ts`)
-  - qual arquivo de estilo
-  - qual a pasta final de build
+- qual o arquivo de index (`index.html`)
+- qual arquivo main (`main.ts`)
+- qual arquivo de estilo
+- qual a pasta final de build
 
-  ### 2. main.ts
+### 2. main.ts
 
-  - carrega o módulo da app
-  - inicializa o módulo da app
-  - se der erro, mostra no console
+- carrega o módulo da app
+- inicializa o módulo da app
+- se der erro, mostra no console
 
-  ### 3. app.module.ts
+### 3. app.module.ts
 
-  - todo novo componente deve ser declarado
-  - fala quais módulos são declaros
-  - qual componente tem que inicializar
+- todo novo componente deve ser declarado
+- fala quais módulos são declaros
+- qual componente tem que inicializar
+- toda aplicação tem um módulo principal
+- todos os elementos devem estar registrados em um módulo
+- é um elemento que reúno os demais elementos da app
+
+```typescript
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+- `declaritions`: referenciamos todos os componentes que são relacionados à esse módulo
+- `imports`: módulos do projeto ou terceiros que usamos para funcionalidade daquele módulo (ex: `moment`)
+- `providers`: aquificam os services `services` da aplicação (serve a aplicação sendo um serviço para manipular / tratar dado, fazer acesso a api, webservice, etc)
+- `bootstrap`: componente inicial 9normalmente `AppComponent`
+- `exports`: posso exporta este módulo para fazer uso em outro local (quando tem mais de 1 módulo na app -> pasta shared, pasta compartilhada da aplicação)
 
 ### 4. app.component.ts
 
 - o componente inicializa primeiro
 - selectior é a tag a ser carregada no index.html
 - este pode ser o nome que quisermos
+- responsável para renderizar uma view ao usuário (seja uma página, tela completa, ou uma parte)
+
+```typescript
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'App Conceitos';
+}
+```
+
+- `selector`: 
+  - todo seletor começa com o prefixo declarado no `angular.json` -> boa prática (aqui o prefixo declaro é `app`, logo um exemplo de componente é `app-root`)
+  - este prefixo não precisa ser usado no nome do arquivo ou do componente, apenas no seletor
+  - cria-se uma tag html que carrega o componente criado
+- `template` ou `templateURL`:
+  - um ou outro
+  - template: mais simples; coloca a tag do html direto neste arquivo
+  - templateURL: carrega o arquivo de html, mais completo
+- `styles` ou `styleUrls: []`:
+  - mesma coisa, porém referente à css
+  - styles: css direto
+  - styleUrls: é um array, então poderia carregar mais de um arquivo css
+
+
+
 
 ### 5. html & css do componente
 
 - aqui é o html e o css do componente que irá aparecer na tela
+
+### @ Decorator
+
+- define o que são os arquivos
+- `@Component` usa para definir um componente
 

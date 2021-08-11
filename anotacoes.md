@@ -543,9 +543,6 @@ export class AppComponent {
   - styles: css direto
   - styleUrls: é um array, então poderia carregar mais de um arquivo css
 
-
-
-
 ### 5. html & css do componente
 
 - aqui é o html e o css do componente que irá aparecer na tela
@@ -555,3 +552,40 @@ export class AppComponent {
 - define o que são os arquivos
 - `@Component` usa para definir um componente
 
+### Interpolação simples
+
+`<h1>{{titulo}}</h1>``
+
+### Interpolação complexa
+
+- diretiva estrutural
+- forma de alterar e controlar a estrutura do código que estamos 
+- manipulando, controla visualmente o elemento
+- queremos fazer uma lista dinâmica
+- sempre vamos utilizar um asterísco
+- fazemos uso de um atributo na tag html com uso de * na frente do atributo
+- exemplo: *ngFor -> nosso laço de repetição 
+
+``html
+<ul>
+    <li *ngFor="let topico of topicos">
+        {{topico}}
+    </li>
+</ul>
+
+- esse `topicos` veio do `.ts``
+
+```typescript
+export class AppExemplo1Component {
+  titulo = 'Tópicos das aulas';
+  exibe:  boolean = true;
+  topicos: string[] = [
+    'Conceitos do NodeJS',
+    'MVC com Express.js',
+    'WebService - criação e consumo',
+    'MongoDB',
+    'AngularJS',
+    'Angular',
+  ];
+}
+```

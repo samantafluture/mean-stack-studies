@@ -1,0 +1,14 @@
+<!-- interpolação complexa: diretiva estrutural -->
+<div class="alert alert-success" *ngIf="exibe">
+    Mensagem de alerta!
+</div>
+
+<!-- interpolação simples -->
+<h1>{{titulo}}</h1>
+
+<!-- interpolação complexa: diretiva estrutural -->
+<ul>
+    <li *ngFor="let topico of topicos">
+        {{topico}}
+    </li>
+</ul>

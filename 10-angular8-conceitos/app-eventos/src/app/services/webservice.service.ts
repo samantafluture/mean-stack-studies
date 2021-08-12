@@ -14,7 +14,7 @@ export class WebserviceService {
 
   urlCRUD: string = 'http://localhost:3200/evento';
   urlList: string = 'http://localhost:3200/eventos';
-  urlUsers: string = 'http://localhost:3200/usuarios';
+  urlUsers: string = 'https://api.github.com/users/samantafluture/followers';
 
   constructor(private http: HttpClient) {}
 

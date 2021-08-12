@@ -65,6 +65,15 @@ body {
 
 /* página lista de eventos */
 
+h1 {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 60px;
+	font-family: 'Bree Serif', 'serif';
+  padding-bottom: 0.5em;
+	color: #FFF;
+}
+
 body {
 	background: #724f84;
 	font-size:22px;
@@ -88,14 +97,7 @@ a {
 	color: #FFF;
 }
 
-h1 {
-	margin-top: 40px;
-	text-align:center;
-	font-size:60px;
-	font-family: 'Bree Serif', 'serif';
-  padding-bottom: 0.5em;
-	color: #FFF;
-}
+
 
 p {
 	text-align: center;
@@ -281,6 +283,11 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+img {
+  max-width: 120px;
+  max-height: 120px;
 }
 
 footer {

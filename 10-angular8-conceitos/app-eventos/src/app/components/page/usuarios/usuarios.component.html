@@ -4,24 +4,26 @@
   <table class="table-fill">
     <thead>
       <tr>
-        <th>Nome</th>
-        <th>Senha</th>
+        <th>Username</th>
+        <th>Profile Pic</th>
+        <th>GitHub Link</th>
       </tr>
     </thead>
     <tbody class="table-hover">
       <!-- {{usuarios | json}} -->
-      <!-- <tr *ngFor="let usuario of usuarios"> -->
-      <!-- <td>{{ usuario.nome }}</td>
-        <td>{{ usuario.senha }}</td>
+      <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.login }}</td>
+      <td><img [src]="usuario.avatar_url"/></td>
+      <td><a [href]="usuario.html_url">{{ usuario.html_url }}</a></td>
+      </tr>
+      <!-- <tr>
+        <td>Teste</td>
+        <td>Teste</td>
+      </tr>
+      <tr>
+        <td>Teste</td>
+        <td>Teste</td>
       </tr> -->
-      <tr>
-        <td>Teste</td>
-        <td>Teste</td>
-      </tr>
-      <tr>
-        <td>Teste</td>
-        <td>Teste</td>
-      </tr>
     </tbody>
   </table>
 </div>

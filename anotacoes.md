@@ -666,3 +666,28 @@ export class AppExemplo1Component {
 
 exemplo: `ng new app-eventos --routing=true --style=scss --skip-tests=true`
 
+## Criando um módulo "shared"
+
+`ng generate module components/shared`
+
+- importar no `app.module.ts` o novo módulo
+- exportar o componente em seu arquivo de módulo (`shared.module.ts`) com `exports`
+
+`exports: [MenuComponent]`
+
+## router-outlet
+
+- troca do conteúdo baseado na rota
+- ele carrega o conteúdo, baseado na rota
+`<router-outlet></router-outlet>`
+
+- configurar rotas pelo `router-link `, sem `href` pois este recarrega a página
+` <a [routerLink]="['/']">Home</a>`
+
+- o menu shared está compartilhado em todas as páginas
+- só muda embaixo
+- `app.routing` configura as rotas (sem barra)
+- no menu, usamos o `routerLink` (com barra, ter aspas, ter colchetes)
+
+
+

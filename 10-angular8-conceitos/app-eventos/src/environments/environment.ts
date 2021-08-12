@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlCRUD: 'http://localhost:3200/evento',
+  urlList: 'http://localhost:3200/eventos',
 };
 
 /*

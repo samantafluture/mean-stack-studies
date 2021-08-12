@@ -689,5 +689,22 @@ exemplo: `ng new app-eventos --routing=true --style=scss --skip-tests=true`
 - `app.routing` configura as rotas (sem barra)
 - no menu, usamos o `routerLink` (com barra, ter aspas, ter colchetes)
 
+## Webservice
 
+- criar uma pasta com uma service
+- vamos usar o `HttpClient`
+- criamos uma função pública para ser acessada
+- é um `Observable` que vai aguardar e observar uma chamada e retornar "algo"
+- esse "algo" é tipado no tipo Evento[]
+- que significa uma lista por conta dos colchetes e evento que é a interface que criamos
+- o Observable por aguardar tem como padrão o return
+- já solicitamos diretamente a requisição do tipo get para pegar os eventos da nossa API
+- falamos também para a requisição o que é esperado no seu tipo = Evento[]
+- e falamos de onde esperamos essa lista = `urlList`
+- dou `subscribe` no Observable
+- por termos um Observable, a função `getEventos()` usa o `subscribe`
+- ele se "inscreve" nessa observação, aguardando um retorno
+- no `subscribe`, utilizamos o callback que podemos usar no modelo `arrow function`
+- e esperamos diretamente a resposta que será nossa lista de eventos
+- atribuimos então a respsota a lista de eventos criada já modelada para ser uma lista de eventos -> baseada no Evento[]
 

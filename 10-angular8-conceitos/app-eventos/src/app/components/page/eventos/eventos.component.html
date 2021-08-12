@@ -1,18 +1,22 @@
-<h1>Eventos</h1>
+<div class="container">
+  <h1>Eventos</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Descrição</th>
-      <th>Data</th>
-      <th>Preço</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Exemplo de descrição</td>
-      <td>dd/MM/yyyy</td>
-      <td>R$ XX,XX</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table-fill">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Data</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+        <!-- {{eventos | json}} -->
+      <tr *ngFor="let evento of eventos">
+        <td>{{evento.descricao}}</td>
+        <td>{{evento.data | date:'dd/MM/yyyy'}}</td>
+        <td>{{evento.preco | currency: 'R$'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

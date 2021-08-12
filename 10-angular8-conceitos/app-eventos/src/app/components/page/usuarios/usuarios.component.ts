@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { WebserviceService } from 'src/app/services/webservice.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuarios.component.scss']
 })
 export class UsuariosComponent implements OnInit {
+  usuarios: Usuario[] = [];
 
-  constructor() { }
+  constructor(private webservice: WebserviceService) { }
 
   ngOnInit(): void {
+    this.webservice
+      .getUsuarios()
+      .subscribe((resposta) => (this.usuarios = resposta));
   }
 
 }

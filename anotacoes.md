@@ -603,3 +603,66 @@ export class AppExemplo1Component {
 
 [Documentação](https://angular.io/guide/component-overview)
 [Material Angular UI](https://material.angular.io/components/autocomplete/overview)
+
+# Aula 09
+
+## ng generate
+
+- comando `ng generate` para criar coisas automáticas no Angular
+- abreviação `ng g`
+- fonte: https://angular.io/cli/generate
+- posso passar outras coisas, como a pasta etc
+
+`ng generate component <nome_componente> <pasta>`
+`ng generate component components/app-exemplo3`
+
+## Property Binding
+
+- tipo de binding unidirecional
+- de um para o outro (do componente para a view ou da view para o componente)
+- enviar um valor pra view por meio de propriedade
+- usar estes elementos em um componente html
+
+- colocar o atributo entre [] quando a propriedade dele está vindo de fora
+- o html entende que o valor dinâmico que ele vai ter vai receber por meio de `[]` 
+- assim o html consegue preencher de forma dinâmica a informação
+
+`<input type="text" id="random" [value]="random">`
+
+- já se o valor deve ficar fora da tag (não como atributo), então colocar {{}}
+
+`<h1>{{h1}}</h1>`
+
+## Event Binding
+
+- da view para o componente
+- unidirecional
+- recebe algo vindo do html
+- tem que passar o evento entre `()` e uma função entre `""`
+
+`<button (click)="alterarTexto()">Alterar texto</button>``
+
+## ngOnIt e constructor()
+
+- OnInit -> interface, ao inicializar o Angular, processadas todas as infos na inicialização
+- constructor -> executado quando o componente é criado, carregando tudo o que o componente precisa ter para existir
+
+## Service
+
+- é um repositório de informações ou configurações que declaramos e definimos no constructor() do componente
+- literalmente servirá para o componente para algo: por exemplo tratar informação, trazer dados, etc
+- a ideia é padronizar comportamentos
+- padrõs para chamada de web service etc e tal
+- é declarada no constructor() para que quando o componente esteja criado ele esteja pronto e apto para interagir com os serviços que auxiliarão para ligar (seja de qual forma for) com os dados e configurações / funções vindas da service
+- não interage com o usuário
+- é um controle totalmente para o sistema
+
+- criar uma service
+`ng generate service services/topicos`
+
+## Criando nova aplicação
+
+- o comando `ng new <nome do app> --routing=true --style=scss --skip-tests=true` gera uma app com configuração de rotas, scss paara estilos e sem arquivos de testes
+
+exemplo: `ng new app-eventos --routing=true --style=scss --skip-tests=true`
+

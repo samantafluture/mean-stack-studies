@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>Usuários</h1>
 
   <table class="table-fill">
@@ -17,4 +17,21 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
+
+<h1>Usuários</h1>
+<!-- <div *ngFor="let usuario of usuarios"> -->
+  <section>
+    <div class="card" *ngFor="let usuario of usuarios">
+      <img
+        [src]="usuario.avatar_url"
+        class="card-img-top"
+        alt="foto perfil github"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ usuario.login }}</h5>
+        <a [href]="usuario.html_url" class="btn btn-primary">Ver perfil</a>
+      </div>
+    </div>
+</section>
+<!-- </div> -->

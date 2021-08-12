@@ -9,6 +9,7 @@ import { UsuariosComponent } from './components/page/usuarios/usuarios.component
 import { EventosComponent } from './components/page/eventos/eventos.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

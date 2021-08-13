@@ -1,5 +1,20 @@
-<section>
+<!-- <section>
   <h1>Página não encontrada</h1>
   <img [src]="url" alt="" />
   <h2><span>Ops, está perdido?</span></h2>
+</section> -->
+
+<!-- <div class="card" *ngFor="let quote of quotes.results">
+  <p>{{ quote.content }}</p>
+  <p>{{ quote.author }}</p>
+</div> -->
+
+<section>
+  <h1>Página não encontrada</h1>
+  <div *ngFor="let quote of quotes">
+    <blockquote class="quote-card">
+      <p>{{ quote.content }}</p>
+      <cite>{{ quote.author }}</cite>
+    </blockquote>
+  </div>
 </section>

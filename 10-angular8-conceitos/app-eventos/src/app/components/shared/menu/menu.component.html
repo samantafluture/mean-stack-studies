@@ -1,13 +1,22 @@
 <nav >
   <ul>
     <li>
-      <a [routerLink]="['/']">Home</a>
+      <a [routerLink]="['/']">
+        <fa-icon [icon]="faHome"></fa-icon>
+        <span>Home</span>
+      </a>
     </li>
     <li>
-      <a [routerLink]="['/eventos']">Lista de Eventos</a>
-    </li>
+      <a [routerLink]="['/eventos']">
+        <fa-icon [icon]="faCalendarAlt"></fa-icon>
+        <span>Eventos</span>
+      </a>
+    </li> 
     <li>
-      <a [routerLink]="['/usuarios']">Lista de Usuários</a>
+      <a [routerLink]="['/usuarios']">
+        <fa-icon [icon]="faUsers"></fa-icon>
+        <span>Usuários</span>
+      </a>
     </li>
   </ul>
 </nav>

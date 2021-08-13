@@ -10,6 +10,7 @@ import { EventosComponent } from './components/page/eventos/eventos.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

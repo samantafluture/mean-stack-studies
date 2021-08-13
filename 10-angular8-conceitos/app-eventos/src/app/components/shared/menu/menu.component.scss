@@ -1,0 +1,49 @@
+nav {
+    background-color: #623b76;
+  }
+  
+  nav ul {
+    padding: 0 1em;
+    margin: 0;
+    list-style: none;
+    // position: relative;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    background-color: #623b76;
+  }
+  
+  nav a {
+    display: block;
+    padding: 0 1em;
+    color: #fff;
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #421a55;
+    color: #fff;
+  }
+
+li {
+    display: inline-block;
+}
+
+fa-icon {
+    color: #fff;
+    padding-right: 10px;
+    vertical-align: top;
+}   
+
+@media (max-width: 480px) {
+  span {
+    display: none;
+  }
+
+  a {
+    text-align: center;
+  }
+}

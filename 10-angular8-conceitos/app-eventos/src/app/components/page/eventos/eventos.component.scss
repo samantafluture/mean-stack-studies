@@ -1,5 +1,9 @@
 /* eventos */
 
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 h3 {
   font-size: 30px;
   text-align: center;
@@ -156,4 +160,9 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+.qtd {
+  color: #623b76;
+  cursor: pointer;
 }

@@ -16,6 +16,9 @@ export class UsuariosComponent implements OnInit {
     this.webservice
       .getUsuarios()
       .subscribe((resposta) => (this.usuarios = resposta));
+
+
   }
 
 }
+

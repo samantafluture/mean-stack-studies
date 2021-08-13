@@ -708,3 +708,7 @@ exemplo: `ng new app-eventos --routing=true --style=scss --skip-tests=true`
 - e esperamos diretamente a resposta que será nossa lista de eventos
 - atribuimos então a respsota a lista de eventos criada já modelada para ser uma lista de eventos -> baseada no Evento[]
 
+---
+
+# Aula 10
+

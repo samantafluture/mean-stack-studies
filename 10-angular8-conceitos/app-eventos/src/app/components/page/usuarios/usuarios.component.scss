@@ -1,5 +1,9 @@
 /* cards */
 
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 section {
   display: flex;
   flex-wrap: wrap;
@@ -27,4 +31,9 @@ section {
 
 .card-img-top {
     width: 190px;
+}
+
+.qtd {
+  color: #623b76;
+  cursor: pointer;
 }

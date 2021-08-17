@@ -1,0 +1,44 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+section {
+  display: block;
+  margin: auto;
+  max-width: 600px;
+  padding: 30px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #fff;
+  max-width: 360px;
+}
+
+p {
+  background: #f2f2f2;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+a {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  outline: 0;
+  width: 100%;
+  padding: 15px;
+  color: #ffffff;
+  border: 0;
+  font-size: 18px;
+  line-height: 26px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 3px;
+  background: rgb(114, 114, 114);
+  margin-top: 20px;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  background: #aca1a1;
+}

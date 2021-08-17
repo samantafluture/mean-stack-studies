@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>
+    Eventos <span class="qtd">({{ eventos.length }})</span>
+  </h1>
+  <div>
+    <a [routerLink]="['/eventos/novo']" class="btn btn-primary">
+      Adicionar Novo
+    </a>
+  </div>
+  <table class="table-fill">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Data</th>
+        <th>Preço</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      <!-- {{eventos | json}} -->
+      <tr *ngFor="let evento of eventos">
+        <td>{{ evento.descricao }}</td>
+        <td>{{ evento.data | date: "dd/MM/yyyy" }}</td>
+        <td>{{ evento.preco | currency: "R$" }}</td>
+        <td>
+          <a [routerLink]="['/evento/' + evento._id]" class="btn btn-info">
+            Ver
+          </a>
+          <a
+            [routerLink]="['/evento/editar/' + evento._id]"
+            class="btn btn-warning"
+          >
+            Editar
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

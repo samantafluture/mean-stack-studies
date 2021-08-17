@@ -1,0 +1,46 @@
+<h1>Inserir Evento</h1>
+
+<form class="form-horizontal">
+  <fieldset>
+    <div class="form-group row">
+      <input
+        [(ngModel)]="evento.descricao"
+        type="text"
+        placeholder="Descrição"
+        id="descricao"
+        name="descricao"
+        class="form-control col-md-10"
+      />
+    </div>
+    <div class="form-group row">
+      <input
+        [(ngModel)]="evento.data"
+        type="date"
+        placeholder="Data"
+        id="data"
+        name="data"
+        class="form-control col-md-4"
+      />
+      <input
+        [(ngModel)]="evento.preco"
+        type="text"
+        placeholder="Preço"
+        id="preco"
+        name="preco"
+        class="form-control col-md-4"
+      />
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 btn-1">
+        <button (click)="incluir(evento)" class="btn btn-primary">
+          Incluir
+        </button>
+      </div>
+      <div class="col-md-6 btn-2">
+        <button (click)="cancelar()" class="btn btn-secondary">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </fieldset>
+</form>

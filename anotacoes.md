@@ -712,3 +712,20 @@ exemplo: `ng new app-eventos --routing=true --style=scss --skip-tests=true`
 
 # Aula 10
 
+## ngModel
+
+- manipulação de entrada e saída com `proprety binding` e `event binding`
+
+`[(ngModel)]="evento.preco"`
+
+## Fazer tratamento de erros
+
+- `toaster npx boostrap`
+- tratar cada erro da api com `code`
+- e usar esses codes para validação no front-end, usando mensagens com toaster
+
+## Fazer build
+
+[tutorial](https://scotch.io/courses/build-your-first-angular-website/angular-cli-serving-and-building-for-production)
+
+`ng build` gera pasta `/dist`

@@ -7,7 +7,7 @@ import { WebserviceService } from 'src/app/services/webservice.service';
   templateUrl: './eventos.component.html',
   styleUrls: ['./eventos.component.scss'],
 })
-export class EventosComponent implements OnInit {
+export class ListaEventosComponent implements OnInit {
   eventos: Evento[] = [];
 
   constructor(private webservice: WebserviceService) {}
